@@ -1,0 +1,593 @@
+/* Ziwa Data - Bright & High-Contrast Light Theme Landing Page */
+
+.ziwa-landing {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #F4F8F9;
+  color: #0F2933;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.ziwa-landing *, .ziwa-landing *::before, .ziwa-landing *::after {
+  box-sizing: border-box;
+}
+
+/* Container */
+.ziwa-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Navbar */
+.ziwa-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #E2E8F0;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.ziwa-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ziwa-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.ziwa-nav-logo {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) saturate(100%) invert(23%) sepia(55%) saturate(1350%) hue-rotate(145deg);
+}
+
+.ziwa-nav-links {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .ziwa-nav-links {
+    display: flex;
+  }
+}
+
+.ziwa-nav-link {
+  color: #475569;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ziwa-nav-link:hover {
+  color: #0A5160;
+}
+
+.ziwa-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ziwa-btn-qr {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  background-color: #0A5160;
+  color: #FFFFFF;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(10, 81, 96, 0.2);
+  transition: all 0.2s ease;
+}
+
+.ziwa-btn-qr:hover {
+  background-color: #073B46;
+  transform: translateY(-1px);
+}
+
+.ziwa-btn-signin {
+  color: #0F2933;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+}
+
+.ziwa-btn-signin:hover {
+  color: #2DA8A8;
+}
+
+.ziwa-btn-getstarted {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  background-color: #2DA8A8;
+  color: #041921;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(45, 168, 168, 0.3);
+  transition: all 0.2s ease;
+}
+
+.ziwa-btn-getstarted:hover {
+  background-color: #258E8E;
+  transform: translateY(-1px);
+}
+
+/* Hero Section */
+.ziwa-hero-section {
+  padding: 4.5rem 0 5.5rem;
+  background: linear-gradient(180deg, #EBF4F6 0%, #F4F8F9 100%);
+}
+
+.ziwa-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .ziwa-hero-grid {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+
+.ziwa-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  background-color: rgba(45, 168, 168, 0.15);
+  border: 1px solid rgba(45, 168, 168, 0.35);
+  color: #0A5160;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.ziwa-hero-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #0F2933;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .ziwa-hero-title {
+    font-size: 3.6rem;
+  }
+}
+
+.ziwa-hero-desc {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.65;
+  margin-bottom: 2.25rem;
+  max-width: 38rem;
+}
+
+.ziwa-hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .ziwa-hero-actions {
+    flex-direction: row;
+  }
+}
+
+.ziwa-btn-primary-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.1rem 2.25rem;
+  background-color: #0A5160;
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  font-weight: 800;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(10, 81, 96, 0.25);
+  transition: all 0.2s ease;
+}
+
+.ziwa-btn-primary-lg:hover {
+  background-color: #073B46;
+  transform: translateY(-2px);
+}
+
+.ziwa-btn-secondary-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.1rem 2.25rem;
+  background-color: #FFFFFF;
+  color: #0F2933;
+  border: 1.5px solid #CBD5E1;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.ziwa-btn-secondary-lg:hover {
+  border-color: #0A5160;
+  color: #0A5160;
+  background-color: #F8FAFC;
+}
+
+.ziwa-hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem;
+  margin-top: 2.25rem;
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 700;
+}
+
+.ziwa-hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Card Preview (High Contrast Dark Ocean Accent Card) */
+.ziwa-preview-card {
+  position: relative;
+  background: linear-gradient(145deg, #053642 0%, #0A5160 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.75rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(10, 81, 96, 0.35);
+}
+
+.ziwa-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.ziwa-card-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #5ECFE0;
+  text-transform: uppercase;
+}
+
+.ziwa-pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 10px #10B981;
+}
+
+.ziwa-stream-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #5ECFE0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ziwa-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.ziwa-metric-box {
+  background-color: rgba(4, 25, 33, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  padding: 1.15rem;
+}
+
+.ziwa-metric-label {
+  font-size: 0.78rem;
+  color: #CBD5E1;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 0.35rem;
+}
+
+.ziwa-metric-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  font-family: var(--font-mono, monospace);
+  color: #5ECFE0;
+}
+
+.ziwa-metric-sub {
+  font-size: 0.72rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+}
+
+.ziwa-ledger-banner {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.25rem;
+  padding: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.ziwa-ledger-title {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+}
+
+.ziwa-ledger-sub {
+  font-size: 0.78rem;
+  color: #CBD5E1;
+}
+
+/* Sections */
+.ziwa-section {
+  padding: 5rem 0;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+}
+
+.ziwa-section-alt {
+  padding: 5rem 0;
+  background-color: #F4F8F9;
+  border-top: 1px solid #E2E8F0;
+}
+
+.ziwa-section-header {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto 3.5rem;
+}
+
+.ziwa-section-subtitle {
+  font-size: 0.78rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 800;
+  color: #0A5160;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.ziwa-section-title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #0F2933;
+  margin: 0.5rem 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.ziwa-section-desc {
+  font-size: 1rem;
+  color: #64748B;
+  line-height: 1.6;
+}
+
+/* Telemetry Grid */
+.ziwa-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .ziwa-telemetry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .ziwa-telemetry-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.ziwa-telemetry-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ziwa-telemetry-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(10, 81, 96, 0.08);
+  border-color: #2DA8A8;
+}
+
+.ziwa-telemetry-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  color: #64748B;
+  font-weight: 700;
+}
+
+.ziwa-telemetry-val {
+  font-size: 2.25rem;
+  font-weight: 900;
+  font-family: var(--font-mono, monospace);
+  color: #0F2933;
+}
+
+.ziwa-telemetry-foot {
+  font-size: 0.78rem;
+  color: #64748B;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Role Selector Tabs */
+.ziwa-role-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.ziwa-role-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  border: 1.5px solid #CBD5E1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #FFFFFF;
+  color: #475569;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.ziwa-role-tab-btn.active {
+  background-color: #0A5160;
+  border-color: #0A5160;
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(10, 81, 96, 0.25);
+}
+
+.ziwa-role-content {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 2rem;
+  padding: 2.25rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 768px) {
+  .ziwa-role-content {
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem;
+  }
+}
+
+.ziwa-role-feature-list {
+  background-color: #F4F8F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.ziwa-role-feature-card {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.ziwa-role-feature-card .ziwa-ledger-title {
+  color: #0F2933;
+}
+
+.ziwa-role-feature-card .ziwa-ledger-sub {
+  color: #64748B;
+}
+
+/* Footer */
+.ziwa-footer {
+  padding: 3.5rem 0;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+  color: #64748B;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .ziwa-footer {
+    flex-direction: row;
+  }
+}
+
+.ziwa-footer-links {
+  display: flex;
+  gap: 1.75rem;
+  font-weight: 700;
+}
+
+.ziwa-footer-links a {
+  color: #0F2933;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ziwa-footer-links a:hover {
+  color: #0A5160;
+}

@@ -1,0 +1,57 @@
+{
+  "name": "fish-farm-early-warning-demo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "tokens": "node scripts/build-tokens.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "predev": "node scripts/build-tokens.mjs",
+    "dev": "concurrently -k -n web,api -c cyan,green \"vite --host\" \"tsx watch --env-file-if-exists=.env server/index.ts\"",
+    "prebuild": "node scripts/build-tokens.mjs",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "start": "NODE_ENV=production tsx --env-file-if-exists=.env server/index.ts",
+    "shots": "node e2e/shots.mjs",
+    "e2e": "node e2e/flows.mjs",
+    "cap:add:android": "npm i -D @capacitor/android && npm run build && cap add android",
+    "cap:add:ios": "npm i -D @capacitor/ios && npm run build && cap add ios",
+    "cap:sync": "npm run build && cap sync",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:reset": "docker compose down -v && docker compose up -d",
+    "db:psql": "docker exec -it ziwadata-postgres psql -U ziwadata -d ziwadata",
+    "test:pg": "TEST_DATABASE_URL=postgres://ziwadata:localdev@127.0.0.1:5434/ziwadata vitest run"
+  },
+  "dependencies": {
+    "express": "^4.22.3",
+    "idb": "^8.0.3",
+    "lucide-react": "^1.49.0",
+    "pg": "^8.23.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@types/express": "^4.17.25",
+    "@types/node": "^26.6.3",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "fake-indexeddb": "^6.2.5",
+    "playwright-core": "^1.63.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "vite-plugin-pwa": "^1.3.0",
+    "vitest": "^5.0.2",
+    "workbox-window": "^7.4.1"
+  }
+}

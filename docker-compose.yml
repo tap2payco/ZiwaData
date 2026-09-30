@@ -1,0 +1,39 @@
+# Local Postgres for development. Start it with:  docker compose up -d
+#
+# This is a LOCAL DEVELOPMENT database. It is not a production deployment and holds no real data.
+# The password below comes from .env (see .env.example); it is a local-only placeholder, not a secret,
+# and the container is published on 127.0.0.1 only, so nothing on the network can reach it.
+#
+# Postgres is chosen so the same schema runs unchanged on Supabase later: Supabase IS Postgres.
+# Nothing here is Supabase-specific, so moving means changing DATABASE_URL and nothing else.
+
+name: ziwadata
+
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: ziwadata-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-ziwadata}
+      POSTGRES_USER: ${POSTGRES_USER:-ziwadata}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-localdev}
+      # Deterministic collation, so ORDER BY does not change under a different host locale.
+      POSTGRES_INITDB_ARGS: '--encoding=UTF8 --locale=C'
+    ports:
+      # 127.0.0.1 only: never expose a database on 0.0.0.0.
+      # 5433 and 6379 are already used by other projects on this machine, so this defaults to 5434.
+      - '127.0.0.1:${POSTGRES_PORT:-5434}:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      # No schema is seeded here on purpose. The server applies server/db/migrations/*.sql on boot
+      # (and the tests do the same), so there is ONE path that creates and upgrades the schema.
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-ziwadata} -d ${POSTGRES_DB:-ziwadata}']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  db-data:

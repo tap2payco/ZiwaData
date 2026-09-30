@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="sw" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0A5160" />
+    <title>Ziwa Data</title>
+    <link rel="icon" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <script>
+      // Set the theme and language BEFORE first paint. localStorage can throw (private mode, blocked): always guarded.
+      (function () {
+        var theme = 'auto', lang = 'sw';
+        try { theme = localStorage.getItem('app.theme') || 'auto'; lang = localStorage.getItem('app.lang') || 'sw'; } catch (e) {}
+        var resolved = theme;
+        if (theme !== 'light' && theme !== 'dark' && theme !== 'sun') {
+          resolved = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          theme = 'auto';
+        }
+        var el = document.documentElement;
+        el.setAttribute('data-theme', resolved);
+        el.setAttribute('data-theme-choice', theme);
+        el.setAttribute('lang', lang === 'en' ? 'en' : 'sw');
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>This app needs JavaScript.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

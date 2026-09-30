@@ -1,0 +1,631 @@
+{
+  "name": "Bwawa",
+  "version": 1,
+  "meta": {
+    "source": "design/foundation/build-tokens.mjs",
+    "basis": "Designed for the KijaniSpace demo, 28 Sep 2026. Working name; confirm with BRELA and the Play Store before branding. Contrast verified by the token generator (zero failures).",
+    "synced": "2026-09-28"
+  },
+  "color": {
+    "themes": [
+      {
+        "id": "light",
+        "name": "Light"
+      },
+      {
+        "id": "dark",
+        "name": "Night"
+      },
+      {
+        "id": "sun",
+        "name": "Sun"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "surface-page",
+        "value": {
+          "light": "#F3F8FA",
+          "dark": "#06141B",
+          "sun": "#FFFFFF"
+        },
+        "usage": "The ground behind everything. Cards sit on it."
+      },
+      {
+        "name": "surface-card",
+        "value": {
+          "light": "#FFFFFF",
+          "dark": "#0E232D",
+          "sun": "#FFFFFF"
+        },
+        "usage": "Cards, sheets, inputs and table bodies. The only surface that carries content."
+      },
+      {
+        "name": "surface-sunken",
+        "value": {
+          "light": "#E6EFF3",
+          "dark": "#0A1B23",
+          "sun": "#F0F0F0"
+        },
+        "usage": "Wells inside a card: table headers, empty states, the offline banner. Never carries critical readings."
+      },
+      {
+        "name": "ink",
+        "value": {
+          "light": "#0A1F2C",
+          "dark": "#EAF4F8",
+          "sun": "#000000"
+        },
+        "usage": "Primary text and icons. Also the outline colour of the focus ring on the sun theme."
+      },
+      {
+        "name": "ink-muted",
+        "value": {
+          "light": "#3E5361",
+          "dark": "#A6BDC8",
+          "sun": "#1F1F1F"
+        },
+        "usage": "Secondary text, labels, units. Meets 7:1 on page and card so it stays readable outdoors; do not lighten it."
+      },
+      {
+        "name": "border",
+        "value": {
+          "light": "#D3E1E8",
+          "dark": "#1D3743",
+          "sun": "#6B6B6B"
+        },
+        "usage": "Hairlines between rows and around cards. Decorative: never the only signal of state."
+      },
+      {
+        "name": "border-strong",
+        "value": {
+          "light": "#5F7B8B",
+          "dark": "#56737F",
+          "sun": "#000000"
+        },
+        "usage": "The boundary of an interactive control (inputs, toggles, secondary buttons). Clears 3:1 against the page."
+      },
+      {
+        "name": "primary",
+        "value": {
+          "light": "#0A5160",
+          "dark": "#5ECFE0",
+          "sun": "#06323C"
+        },
+        "usage": "Identity and the primary action: one primary button per screen, the active tab, the selected row. Doubles as text/icon colour because it clears 7:1 on page and card."
+      },
+      {
+        "name": "on-primary",
+        "value": {
+          "light": "#FFFFFF",
+          "dark": "#04161B",
+          "sun": "#FFFFFF"
+        },
+        "usage": "Text and icons placed on a primary fill."
+      },
+      {
+        "name": "primary-wash",
+        "value": {
+          "light": "#DDEFF3",
+          "dark": "#0F2E38",
+          "sun": "#F0F0F0"
+        },
+        "usage": "Tint behind a selected item or brand icon. Carries primary text at full contrast."
+      },
+      {
+        "name": "tint",
+        "value": {
+          "light": "#BFE3EC",
+          "dark": "#1D4A57",
+          "sun": "#BFE3EC"
+        },
+        "usage": "A low-chroma brand tint used for decoration and empty-state art. Never a state colour, never text."
+      },
+      {
+        "name": "on-tint",
+        "value": {
+          "light": "#0A1F2C",
+          "dark": "#EAF4F8",
+          "sun": "#0A1F2C"
+        },
+        "usage": "Text and icons on a tint fill."
+      },
+      {
+        "name": "ok",
+        "value": {
+          "light": "#0B5C30",
+          "dark": "#63D391",
+          "sun": "#07391E"
+        },
+        "usage": "Healthy / verified / synced, as TEXT or ICON. 7:1 on page and card."
+      },
+      {
+        "name": "ok-fill",
+        "value": {
+          "light": "#2EAD5F",
+          "dark": "#2EAD5F",
+          "sun": "#2EAD5F"
+        },
+        "usage": "Healthy, as a FILL: gauge bars and dots. Pair with a label; never colour alone."
+      },
+      {
+        "name": "ok-wash",
+        "value": {
+          "light": "#DFF3E7",
+          "dark": "#0E2A1B",
+          "sun": "#F0F0F0"
+        },
+        "usage": "Tint behind an OK badge or row."
+      },
+      {
+        "name": "watch",
+        "value": {
+          "light": "#724400",
+          "dark": "#F5C05A",
+          "sun": "#472A00"
+        },
+        "usage": "Needs attention soon, as TEXT or ICON. Amber text is dark brown here so it clears 7:1; the bright amber is only ever a fill."
+      },
+      {
+        "name": "watch-fill",
+        "value": {
+          "light": "#E08A00",
+          "dark": "#E08A00",
+          "sun": "#E08A00"
+        },
+        "usage": "Attention, as a FILL: gauge segments and dots."
+      },
+      {
+        "name": "watch-wash",
+        "value": {
+          "light": "#FDF0D0",
+          "dark": "#33260A",
+          "sun": "#F0F0F0"
+        },
+        "usage": "Tint behind a Watch badge or row."
+      },
+      {
+        "name": "critical",
+        "value": {
+          "light": "#A3120A",
+          "dark": "#FF8F86",
+          "sun": "#650B06"
+        },
+        "usage": "Act now / failed, as TEXT or ICON. 7:1 on page and card."
+      },
+      {
+        "name": "critical-fill",
+        "value": {
+          "light": "#D93025",
+          "dark": "#D93025",
+          "sun": "#D93025"
+        },
+        "usage": "Critical, as a FILL: gauge segments and dots. A destructive button is an outline in the critical text colour, never a filled red."
+      },
+      {
+        "name": "critical-wash",
+        "value": {
+          "light": "#FCE3E0",
+          "dark": "#3A1512",
+          "sun": "#F0F0F0"
+        },
+        "usage": "Tint behind a Critical badge or row."
+      },
+      {
+        "name": "note",
+        "value": {
+          "light": "#1A4F94",
+          "dark": "#8DB8FF",
+          "sun": "#10315C"
+        },
+        "usage": "Neutral information, links, as TEXT or ICON. Not a state."
+      },
+      {
+        "name": "note-fill",
+        "value": {
+          "light": "#3B82D6",
+          "dark": "#3B82D6",
+          "sun": "#3B82D6"
+        },
+        "usage": "Neutral information as a FILL."
+      },
+      {
+        "name": "note-wash",
+        "value": {
+          "light": "#E1EBFA",
+          "dark": "#10233F",
+          "sun": "#F0F0F0"
+        },
+        "usage": "Tint behind an informational note."
+      },
+      {
+        "name": "offline-bg",
+        "value": {
+          "light": "#E6EFF3",
+          "dark": "#12303C",
+          "sun": "#F0F0F0"
+        },
+        "usage": "The offline banner ground. Offline is a normal state, not an error, so it uses a neutral surface with a strong border rather than red."
+      },
+      {
+        "name": "offline-ink",
+        "value": {
+          "light": "#0A1F2C",
+          "dark": "#EAF4F8",
+          "sun": "#000000"
+        },
+        "usage": "Text and icon on the offline banner."
+      },
+      {
+        "name": "focus-ring",
+        "value": {
+          "light": "#0A5160",
+          "dark": "#5ECFE0",
+          "sun": "#06323C"
+        },
+        "usage": "Keyboard and switch-access focus. Drawn as a 3px outline with 2px offset."
+      },
+      {
+        "name": "scrim",
+        "value": {
+          "light": "rgba(10,31,44,0.55)",
+          "dark": "rgba(0,0,0,0.65)",
+          "sun": "rgba(10,31,44,0.55)"
+        },
+        "usage": "Modal and bottom-sheet backdrop."
+      },
+      {
+        "name": "src-manual",
+        "value": {
+          "light": "#0A1F2C",
+          "dark": "#EAF4F8",
+          "sun": "#000000"
+        },
+        "usage": "Provenance: the number was typed in by a person. Always shown with a hand icon and the word \"Manual\"."
+      },
+      {
+        "name": "src-sensor",
+        "value": {
+          "light": "#0A5160",
+          "dark": "#5ECFE0",
+          "sun": "#06323C"
+        },
+        "usage": "Provenance: the number came from an IoT device or the Space-IoT Box. Always shown with a sensor icon and the word \"Sensor\"."
+      },
+      {
+        "name": "src-satellite",
+        "value": {
+          "light": "#52389E",
+          "dark": "#B9A6FF",
+          "sun": "#332362"
+        },
+        "usage": "Provenance: the number came from Earth Observation or agro-climate data. Always shown with a satellite icon and the word \"Satellite\"."
+      },
+      {
+        "name": "chart-1",
+        "value": {
+          "light": "#0A5160",
+          "dark": "#5ECFE0",
+          "sun": "#06323C"
+        },
+        "usage": "First chart series. Every chart mark clears 3:1 against the card."
+      },
+      {
+        "name": "chart-2",
+        "value": {
+          "light": "#3B82D6",
+          "dark": "#8DB8FF",
+          "sun": "#255185"
+        },
+        "usage": "Second chart series."
+      },
+      {
+        "name": "chart-3",
+        "value": {
+          "light": "#52389E",
+          "dark": "#B9A6FF",
+          "sun": "#332362"
+        },
+        "usage": "Third chart series."
+      },
+      {
+        "name": "chart-4",
+        "value": {
+          "light": "#B87400",
+          "dark": "#F5C05A",
+          "sun": "#724800"
+        },
+        "usage": "Fourth chart series."
+      },
+      {
+        "name": "chart-5",
+        "value": {
+          "light": "#5F7B8B",
+          "dark": "#A6BDC8",
+          "sun": "#5F7B8B"
+        },
+        "usage": "Fifth chart series; neutral, used for comparison or baseline lines."
+      }
+    ]
+  },
+  "type": {
+    "fonts": [
+      {
+        "family": "Atkinson Hyperlegible Next",
+        "file": "fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2",
+        "weight": "200 800",
+        "style": "normal"
+      },
+      {
+        "family": "Atkinson Hyperlegible Mono",
+        "file": "fonts/atkinson-hyperlegible-mono-latin-wght-normal.woff2",
+        "weight": "200 800",
+        "style": "normal"
+      }
+    ],
+    "families": {
+      "sans": "\"Atkinson Hyperlegible Next\", system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "mono": "\"Atkinson Hyperlegible Mono\", ui-monospace, \"SF Mono\", Menlo, monospace"
+    },
+    "groups": [
+      {
+        "name": "Headings",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "display",
+            "fontSize": "32px",
+            "lineHeight": "36px",
+            "fontWeight": 800,
+            "letterSpacing": "-0.01em",
+            "sample": "Bwawa langu",
+            "usage": "Screen title on Home. One per screen."
+          },
+          {
+            "name": "title",
+            "fontSize": "26px",
+            "lineHeight": "32px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.01em",
+            "sample": "My Bwawa Record",
+            "usage": "Screen title elsewhere."
+          },
+          {
+            "name": "heading",
+            "fontSize": "20px",
+            "lineHeight": "26px",
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Record reading",
+            "usage": "Section heading."
+          },
+          {
+            "name": "subhead",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Pond 1",
+            "usage": "Card title."
+          }
+        ]
+      },
+      {
+        "name": "Text",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "body",
+            "fontSize": "17px",
+            "lineHeight": "26px",
+            "fontWeight": 400,
+            "letterSpacing": "0",
+            "sample": "Dissolved oxygen is 6.1 mg/L. Record again tomorrow to keep your record complete.",
+            "usage": "Default text. 17sp: read at arm's length in daylight."
+          },
+          {
+            "name": "body-strong",
+            "fontSize": "17px",
+            "lineHeight": "26px",
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Cage 2 needs attention",
+            "usage": "Emphasis; the main line of a list row."
+          },
+          {
+            "name": "label",
+            "fontSize": "15px",
+            "lineHeight": "20px",
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Water temperature",
+            "usage": "Field labels and column headers."
+          },
+          {
+            "name": "caption",
+            "fontSize": "13px",
+            "lineHeight": "18px",
+            "fontWeight": 500,
+            "letterSpacing": "0",
+            "sample": "Saved on this phone · 14:32",
+            "usage": "Timestamps, units, provenance tags. The floor: nothing smaller than 13."
+          },
+          {
+            "name": "button",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "Record today",
+            "usage": "Label of every button."
+          }
+        ]
+      },
+      {
+        "name": "Figures",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "figure-hero",
+            "fontSize": "48px",
+            "lineHeight": "52px",
+            "fontWeight": 800,
+            "letterSpacing": "-0.02em",
+            "sample": "64",
+            "usage": "A single reading the farmer must not miss: dissolved oxygen, the loan limit. Tabular."
+          },
+          {
+            "name": "figure",
+            "fontSize": "30px",
+            "lineHeight": "36px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.01em",
+            "sample": "6.1 mg/L",
+            "usage": "Supporting readings. Tabular."
+          },
+          {
+            "name": "figure-sm",
+            "fontSize": "18px",
+            "lineHeight": "24px",
+            "fontWeight": 700,
+            "letterSpacing": "0",
+            "sample": "12 kg",
+            "usage": "Numbers in list rows. Tabular."
+          }
+        ]
+      }
+    ]
+  },
+  "spacing": {
+    "tokens": [
+      {
+        "name": "space-1",
+        "value": "4px",
+        "usage": "Icon-to-label gap, badge inner padding."
+      },
+      {
+        "name": "space-2",
+        "value": "8px",
+        "usage": "Minimum gap between two touch targets (Android guidance: 8dp)."
+      },
+      {
+        "name": "space-3",
+        "value": "12px",
+        "usage": "Gap between rows inside a card; input inner padding."
+      },
+      {
+        "name": "space-4",
+        "value": "16px",
+        "usage": "Screen gutter and default card padding. The workhorse."
+      },
+      {
+        "name": "space-5",
+        "value": "20px",
+        "usage": "Card padding where the card is the screen's main subject."
+      },
+      {
+        "name": "space-6",
+        "value": "24px",
+        "usage": "Gap between unrelated groups."
+      },
+      {
+        "name": "space-8",
+        "value": "32px",
+        "usage": "Space above a new major section; bottom safe padding above the tab bar."
+      }
+    ]
+  },
+  "radius": {
+    "tokens": [
+      {
+        "name": "radius-sm",
+        "value": "8px",
+        "usage": "Badges, chips."
+      },
+      {
+        "name": "radius-md",
+        "value": "12px",
+        "usage": "Buttons and inputs."
+      },
+      {
+        "name": "radius-lg",
+        "value": "16px",
+        "usage": "Cards."
+      },
+      {
+        "name": "radius-xl",
+        "value": "24px",
+        "usage": "Bottom sheets."
+      },
+      {
+        "name": "radius-pill",
+        "value": "999px",
+        "usage": "Status pills, the tab pill."
+      }
+    ]
+  },
+  "size": {
+    "note": "Fixed dimensions. Targets are for touch first.",
+    "tokens": [
+      {
+        "name": "touch-min",
+        "value": "48px",
+        "usage": "Smallest interactive target (Android 48dp, WCAG AAA 44px). No control is smaller."
+      },
+      {
+        "name": "touch-primary",
+        "value": "56px",
+        "usage": "Height of the primary button and of list rows that navigate. Sized for wet or gloved hands."
+      },
+      {
+        "name": "tab-bar-height",
+        "value": "64px",
+        "usage": "Bottom tab bar, above the system inset."
+      },
+      {
+        "name": "icon-sm",
+        "value": "20px",
+        "usage": "Icon inside a chip or badge."
+      },
+      {
+        "name": "icon-md",
+        "value": "24px",
+        "usage": "Icon beside a label."
+      },
+      {
+        "name": "icon-lg",
+        "value": "32px",
+        "usage": "Icon that stands alone or heads an empty state."
+      },
+      {
+        "name": "stroke-control",
+        "value": "1.5px",
+        "usage": "Border width on interactive controls. Outdoors a 1px hairline vanishes."
+      },
+      {
+        "name": "stroke-focus",
+        "value": "3px",
+        "usage": "Focus outline width."
+      },
+      {
+        "name": "stroke-sun",
+        "value": "2px",
+        "usage": "Border width on the sun theme."
+      }
+    ]
+  },
+  "shadow": {
+    "note": "Outdoors, shadows vanish. Elevation is drawn with a 1.5px border and a surface step; the only shadow is on bottom sheets.",
+    "tokens": [
+      {
+        "name": "shadow-sheet",
+        "value": {
+          "light": "0 -4px 16px rgba(0,0,0,0.12)",
+          "dark": "0 -4px 16px rgba(0,0,0,0.5)",
+          "sun": "none"
+        },
+        "usage": "Bottom sheets and menus only."
+      }
+    ]
+  }
+}
